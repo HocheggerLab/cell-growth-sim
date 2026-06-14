@@ -1,0 +1,242 @@
+[
+  {
+    "birth_volume": 1.0,
+    "division_volume": 2.0137527074704784,
+    "added_volume": 1.0137527074704784,
+    "generation_time": 1.4000000000000001,
+    "generation": 0,
+    "daughter_volumes": [
+      1.0138668866640115,
+      0.999885820806467
+    ],
+    "time": 1.3
+  },
+  {
+    "birth_volume": 1.0138668866640115,
+    "division_volume": 2.146356215910755,
+    "added_volume": 1.1324893292467435,
+    "generation_time": 1.5000000000000002,
+    "generation": 1,
+    "daughter_volumes": [
+      1.0489993109161446,
+      1.0973569049946106
+    ],
+    "time": 2.8000000000000003
+  },
+  {
+    "birth_volume": 0.999885820806467,
+    "division_volume": 2.1167582992580707,
+    "added_volume": 1.1168724784516035,
+    "generation_time": 1.5000000000000002,
+    "generation": 1,
+    "daughter_volumes": [
+      1.078903567586553,
+      1.0378547316715176
+    ],
+    "time": 2.8000000000000003
+  },
+  {
+    "birth_volume": 1.0489993109161446,
+    "division_volume": 2.0094010096673194,
+    "added_volume": 0.9604016987511748,
+    "generation_time": 1.3,
+    "generation": 2,
+    "daughter_volumes": [
+      0.7624785211012309,
+      1.2469224885660886
+    ],
+    "time": 4.1000000000000005
+  },
+  {
+    "birth_volume": 1.0378547316715176,
+    "division_volume": 1.9880531131020556,
+    "added_volume": 0.9501983814305379,
+    "generation_time": 1.3,
+    "generation": 2,
+    "daughter_volumes": [
+      0.9533720970319538,
+      1.0346810160701017
+    ],
+    "time": 4.1000000000000005
+  },
+  {
+    "birth_volume": 1.0973569049946106,
+    "division_volume": 2.2098054384943215,
+    "added_volume": 1.112448533499711,
+    "generation_time": 1.4000000000000001,
+    "generation": 2,
+    "daughter_volumes": [
+      1.0161480736186022,
+      1.1936573648757194
+    ],
+    "time": 4.2
+  },
+  {
+    "birth_volume": 1.078903567586553,
+    "division_volume": 2.401144047560416,
+    "added_volume": 1.322240479973863,
+    "generation_time": 1.6000000000000003,
+    "generation": 2,
+    "daughter_volumes": [
+      1.116060740737364,
+      1.285083306823052
+    ],
+    "time": 4.4
+  },
+  {
+    "birth_volume": 0.9533720970319538,
+    "division_volume": 1.8262231771073072,
+    "added_volume": 0.8728510800753534,
+    "generation_time": 1.3,
+    "generation": 3,
+    "daughter_volumes": [
+      0.9122121045457856,
+      0.9140110725615216
+    ],
+    "time": 5.4
+  },
+  {
+    "birth_volume": 1.2469224885660886,
+    "division_volume": 2.5109935373557883,
+    "added_volume": 1.2640710487896998,
+    "generation_time": 1.4000000000000001,
+    "generation": 3,
+    "daughter_volumes": [
+      1.1849266719488407,
+      1.3260668654069474
+    ],
+    "time": 5.5
+  },
+  {
+    "birth_volume": 1.0161480736186022,
+    "division_volume": 1.9464731233402528,
+    "added_volume": 0.9303250497216506,
+    "generation_time": 1.3,
+    "generation": 3,
+    "daughter_volumes": [
+      0.9117247986304629,
+      1.03474832470979
+    ],
+    "time": 5.5
+  },
+  {
+    "birth_volume": 1.0346810160701017,
+    "division_volume": 2.0835916974794726,
+    "added_volume": 1.048910681409371,
+    "generation_time": 1.4000000000000001,
+    "generation": 3,
+    "daughter_volumes": [
+      1.0288988068861478,
+      1.0546928905933248
+    ],
+    "time": 5.5
+  },
+  {
+    "birth_volume": 1.1936573648757194,
+    "division_volume": 2.403730750310557,
+    "added_volume": 1.2100733854348378,
+    "generation_time": 1.4000000000000001,
+    "generation": 3,
+    "daughter_volumes": [
+      1.4444474186478664,
+      0.9592833316626906
+    ],
+    "time": 5.6000000000000005
+  },
+  {
+    "birth_volume": 0.7624785211012309,
+    "division_volume": 1.783930471555682,
+    "added_volume": 1.021451950454451,
+    "generation_time": 1.7000000000000004,
+    "generation": 3,
+    "daughter_volumes": [
+      0.9080283095212015,
+      0.8759021620344806
+    ],
+    "time": 5.800000000000001
+  },
+  {
+    "birth_volume": 1.116060740737364,
+    "division_volume": 2.3627006066817566,
+    "added_volume": 1.2466398659443927,
+    "generation_time": 1.5000000000000002,
+    "generation": 3,
+    "daughter_volumes": [
+      1.149925629282844,
+      1.2127749773989125
+    ],
+    "time": 5.9
+  },
+  {
+    "birth_volume": 1.285083306823052,
+    "division_volume": 2.7205213818930747,
+    "added_volume": 1.4354380750700226,
+    "generation_time": 1.5000000000000002,
+    "generation": 3,
+    "daughter_volumes": [
+      1.342288037914753,
+      1.3782333439783219
+    ],
+    "time": 5.9
+  },
+  {
+    "birth_volume": 0.9140110725615216,
+    "division_volume": 1.6654367590794439,
+    "added_volume": 0.7514256865179223,
+    "generation_time": 1.2,
+    "generation": 4,
+    "daughter_volumes": [
+      0.7984220669925524,
+      0.8670146920868914
+    ],
+    "time": 6.6000000000000005
+  },
+  {
+    "birth_volume": 0.9122121045457856,
+    "division_volume": 1.836969595316419,
+    "added_volume": 0.9247574907706333,
+    "generation_time": 1.4000000000000001,
+    "generation": 4,
+    "daughter_volumes": [
+      1.067611049235158,
+      0.769358546081261
+    ],
+    "time": 6.800000000000001
+  },
+  {
+    "birth_volume": 1.1849266719488407,
+    "division_volume": 2.3861492937909623,
+    "added_volume": 1.2012226218421216,
+    "generation_time": 1.4000000000000001,
+    "generation": 4,
+    "daughter_volumes": [
+      1.2823942872814045,
+      1.1037550065095578
+    ],
+    "time": 6.9
+  },
+  {
+    "birth_volume": 0.9117247986304629,
+    "division_volume": 1.835988281710072,
+    "added_volume": 0.924263483079609,
+    "generation_time": 1.4000000000000001,
+    "generation": 4,
+    "daughter_volumes": [
+      0.9021795879380017,
+      0.9338086937720703
+    ],
+    "time": 6.9
+  },
+  {
+    "birth_volume": 0.9592833316626906,
+    "division_volume": 1.8375463883923644,
+    "added_volume": 0.8782630567296738,
+    "generation_time": 1.3,
+    "generation": 4,
+    "daughter_volumes": [
+      0.8053873670802922,
+      1.0321590213120722
+    ],
+    "time": 6.9
+  }
+]
