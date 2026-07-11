@@ -18,6 +18,7 @@ fn main() {
       Model::Timer => SizeControlModel::Timer { period: cfg.timer_period() },
       Model::Sizer => SizeControlModel::Sizer { target_size: cfg.sizer_target() },
       Model::Adder => SizeControlModel::Adder { increment: cfg.adder_increment() },
+      Model::AdderAlpha => SizeControlModel::AdderAlpha { alpha: cfg.alpha, v_c: cfg.v_c() },
   };
     eprintln!("{:?}", cfg);
     eprintln!("timer period (doubling time) = {:.4}", cfg.timer_period());

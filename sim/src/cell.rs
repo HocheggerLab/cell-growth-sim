@@ -23,10 +23,13 @@ impl SizeControlModel{
             ModelKind::Adder => SizeControlModel::Adder {
                 increment: Normal::new(cfg.adder_increment(), cv * cfg.adder_increment()).unwrap().sample(rng)
             },
-            ModelKind::AdderAlpha => todo!("finale model — wire up alpha/v_c in Config first"),
+            ModelKind::AdderAlpha => SizeControlModel::AdderAlpha {
+                alpha: cfg.alpha, v_c: Normal::new(cfg.v_c(), cv * cfg.v_c()).unwrap().sample(rng),
+            } 
         }
     }
 }
+
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ModelKind {

@@ -91,8 +91,11 @@ mod tests {
         let cell2 = Cell::new(21.0, 0, SizeControlModel::Timer { period: 20.0 });
         let cell_array = vec![cell1, cell2];
         let (new_cell_array, _events) = growth_loop(cell_array, &cfg, &mut rng, 0);
-        assert!(new_cell_array[0].volume() > 21.0254219);
-        assert!(new_cell_array[1].volume() > 22.0766930);
+        // One growth tick multiplies volume by e^(r·dt); derive that factor from
+        // the config so the test doesn't break when the dt default changes.
+        let g = (cfg.growth_rate * cfg.dt).exp();
+        assert!((new_cell_array[0].volume() - 20.0 * g).abs() < 1e-9);
+        assert!((new_cell_array[1].volume() - 21.0 * g).abs() < 1e-9);
     }
     
     #[test]
@@ -100,7 +103,8 @@ mod tests {
       let cfg = Config::default();
       let mut rng = StdRng::seed_from_u64(cfg.seed);
 
-      let cell = Cell::new(20.0, 0, SizeControlModel::Timer { period: 0.05 });
+      // period shorter than one tick (relative to dt) so it always divides in one step
+      let cell = Cell::new(20.0, 0, SizeControlModel::Timer { period: cfg.dt / 2.0 });
       let (pop, _events) = growth_loop(vec![cell], &cfg, &mut rng, 0);
 
       assert_eq!(pop.len(), 2, "timer past period should split into two");

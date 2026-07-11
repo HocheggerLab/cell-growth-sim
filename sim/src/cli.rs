@@ -1,8 +1,10 @@
 use clap::{Parser, ValueEnum};
 use crate::config::Config;
 
-/// toy clap parser to explore te clap crate and experimemt
+/// Cell growth & division simulator — runs a size-control model and streams
+/// one JSON division-event record per division to stdout.
 #[derive(Parser)]
+#[command(allow_negative_numbers = true)]
 pub struct Cli {
     /// growth model for the sim: sizer, timer or adder
     #[arg(long)]
@@ -28,13 +30,17 @@ pub struct Cli {
     /// maxiumum number of division cycles
     #[arg(long, default_value_t=10000)]
     pub n_max: usize,
+    /// alpha value for alpha model
+    #[arg(long, default_value_t=0.0)]
+    pub alpha: f64,
 }
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, ValueEnum)]
 pub enum Model {
     Timer,
     Sizer,
-    Adder
+    Adder,
+    AdderAlpha,
 }
 
 impl From<&Cli> for Config {
@@ -44,7 +50,8 @@ impl From<&Cli> for Config {
         dt: cli.dt,
         split_noise: cli.split_noise,
         threshold_noise_cv: cli. threshold_noise_cv,
-        seed: cli.seed
+        seed: cli.seed,
+        alpha: cli.alpha
         }
     }
 }

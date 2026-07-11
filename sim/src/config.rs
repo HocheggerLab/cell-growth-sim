@@ -23,6 +23,7 @@ pub struct Config {
     /// RNG seed. Fixed by default so every run is reproducible; change it (or
     /// expose it via CLI later) to explore different stochastic realisations.
     pub seed: u64,
+    pub alpha: f64,
 }
 
 impl Default for Config {
@@ -30,10 +31,11 @@ impl Default for Config {
         Config {
             growth_rate: 0.5,
             initial_volume: 1.0,
-            dt: 0.1,
+            dt: 0.02,
             split_noise: 0.05,
             threshold_noise_cv: 0.1,
             seed: 42,
+            alpha: 0.0,
         }
     }
 }
@@ -52,6 +54,10 @@ impl Config {
     /// Adder increment that yields a doubling on average: `V₀`.
     pub fn adder_increment(&self) -> f64 {
         self.initial_volume
+    }
+    /// equilibriul euqation to set division volume
+    pub fn v_c(&self) -> f64 {
+        (1.0 - self.alpha)*self.initial_volume
     }
 }
 

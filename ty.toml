@@ -1,0 +1,8 @@
+# ty configuration for the cell-growth-sim monorepo.
+#
+# VS Code is opened at the repo root, but the Python project (and its virtual
+# environment) live in the `analysis/` subdirectory. Point ty at that venv so it
+# resolves third-party imports (marimo, polars, altair, ...) instead of falling
+# back to the system Python.
+[environment]
+python = "./analysis/.venv"
