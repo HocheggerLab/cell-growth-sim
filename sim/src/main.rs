@@ -1,15 +1,13 @@
-mod cell;
-mod config;
-mod simulation; 
-mod cli;
+use adder_model::simulation::{run, events_to_json};
+use adder_model::cell::SizeControlModel;
+use adder_model::config::Config;
+use adder_model::cli::{Cli, Model};
 
-use crate::simulation::{run, events_to_json};
-use crate::cell::SizeControlModel;
-use crate::config::Config;
+
 use rand::rngs::StdRng;
 use rand::SeedableRng;
 use clap::Parser;
-use crate::cli::{Cli, Model};
+
 
 fn main() {
     let cli = Cli::parse();

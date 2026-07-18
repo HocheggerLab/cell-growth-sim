@@ -15,26 +15,15 @@ def _():
 
     # Altair refuses >5000 rows by default; the exploded return map exceeds that,
     # so lift the guard. (We keep specs small by sampling — see the df_scatter cell.)
-    alt.data_transformers.disable_max_rows()
+    _ = alt.data_transformers.disable_max_rows()
     return alt, io, mo, pl, subprocess
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.md("""
-    # How does a cell control its size?
-
-    A cell is born at volume **V_b** and grows until it divides. *When* it
-    decides to divide defines three classic strategies. Pick one below,
-    **predict what you'll see**, then run it.
-
-    The key plot is **added volume ΔV vs birth volume V_b**:
-
-    - **Timer** — divides after a fixed *time* → always doubles → ΔV should **rise** with V_b.
-    - **Sizer** — divides at a fixed *size* → big babies add little → ΔV should **fall** with V_b.
-    - **Adder** — adds a fixed *increment* → ΔV should stay **flat**.
-
-    Start with the timer. Then add the sizer and watch the slope flip.
+    mo.md(r"""
+    ## Simulating Timer, Sizer and Adder models
+    Selecting a model below will run a simulated cell growth and division experiment. Growth is exponential and division time is determined by the respective model (ie time, size or added volume).
     """)
     return
 
@@ -113,26 +102,6 @@ def _(mo):
 
     mo.vstack([models, mo.md("---"), n_max, split_noise, threshold_cv, seed])
     return models, n_max, seed, split_noise, threshold_cv
-
-
-@app.cell
-def _(mo, models):
-    # Reactive guidance: state the expectation for whatever is selected.
-    EXPECTATION = {
-        "timer": "**Timer** → ΔV should **rise** with V_b (slope ≈ +1).",
-        "sizer": "**Sizer** → ΔV should **fall** with V_b (slope ≈ −1).",
-        "adder": "**Adder** → ΔV should stay **flat** (slope ≈ 0).",
-    }
-    if models.value:
-        body = "\n\n".join(EXPECTATION[m] for m in models.value)
-        hint = mo.callout(mo.md(f"**What to expect**\n\n{body}"), kind="info")
-    else:
-        hint = mo.callout(
-            mo.md("👇 Pick a model to run the simulation. Predict the slope first!"),
-            kind="warn",
-        )
-    hint
-    return
 
 
 @app.cell
@@ -221,7 +190,7 @@ def _(MODEL_COLORS, alt, df_scatter, pl):
         "mother_vb", "daughter_vb", groupby=["model"]
     ).mark_line(size=3)
     panel_b = (diagonal + base_b.mark_point(opacity=0.15, size=10) + fit_b).properties(
-        width=300, height=240, title="B · return map  (slope = (1+α)/2, dashed = y=x)"
+        width=300, height=240, title=""
     )
     return (panel_b,)
 
@@ -288,17 +257,15 @@ def _(panel_a, panel_b, panel_c, panel_d):
 
 @app.cell
 def _(mo):
-    mo.md(
-        """
-        ---
-        ## The α model — one dial from sizer to timer
+    mo.md("""
+    ---
+    ## The α model — one dial from sizer to timer
 
-        The three strategies are really *one family*. A cell divides once it has
-        added **ΔV = α·V_b + V_c**, and the single parameter **α** interpolates
-        between them: **−1 = sizer**, **0 = adder**, **+1 = timer**. Drag α and
-        watch all four panels swing continuously between the regimes.
-        """
-    )
+    The three strategies are really *one family*. A cell divides once it has
+    added **ΔV = α·V_b + V_c**, and the single parameter **α** interpolates
+    between them: **−1 = sizer**, **0 = adder**, **+1 = timer**. Drag α and
+    watch all four panels swing continuously between the regimes.
+    """)
     return
 
 
